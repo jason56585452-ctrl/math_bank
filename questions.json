@@ -1,0 +1,37 @@
+[
+  {
+    "id": "M01_001",
+    "concept": "M01整數的運算",
+    "difficulty": "基礎",
+    "content": "計算 $(-15) + 8 - (-12)$ 的值為多少？",
+    "solution": "原式 $= -15 + 8 + 12 = -7 + 12 = 5$"
+  },
+  {
+    "id": "M01_002",
+    "concept": "M01整數的運算",
+    "difficulty": "進階",
+    "content": "如下圖，數線上 $A$、$B$ 兩點所表示的數分別為 $-3$ 與 $5$，求 $\\overline{AB}$ 的長度。\\n\\begin{center}\\n\\begin{tikzpicture}\\n\\draw[-stealth, thick] (-4,0) -- (6,0);\\n\\filldraw (-3,0) circle (2pt) node[above] {$A(-3)$};\\n\\filldraw (5,0) circle (2pt) node[above] {$B(5)$};\\n\\end{tikzpicture}\\n\\end{center}",
+    "solution": "$\\overline{AB} = |5 - (-3)| = 8$"
+  },
+  {
+    "id": "M02_001",
+    "concept": "M02一元一次方程式",
+    "difficulty": "基礎",
+    "content": "求方程式 $3x - 5 = 10$ 的解。",
+    "solution": "$3x = 15 \\implies x = 5$"
+  },
+  {
+    "id": "M03_001",
+    "concept": "M03乘法公式",
+    "difficulty": "基礎",
+    "content": "展開 $(2x - 3)^2$。",
+    "solution": "$(2x)^2 - 2 \\cdot 2x \\cdot 3 + 3^2 = 4x^2 - 12x + 9$"
+  },
+  {
+    "id": "M04_001",
+    "concept": "M04根號的運算",
+    "difficulty": "基礎",
+    "content": "化簡 $\\sqrt{12} + \\sqrt{27}$。",
+    "solution": ""
+  }
+]
