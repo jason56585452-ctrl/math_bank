@@ -1,37 +1,332 @@
 [
   {
-    "id": "M01_001",
-    "concept": "M01整數的運算",
+    "id": "HG114_1_3_01",
+    "concept": "一元一次方程式>文字符號的簡記",
     "difficulty": "基礎",
-    "content": "計算 $(-15) + 8 - (-12)$ 的值為多少？",
-    "solution": "原式 $= -15 + 8 + 12 = -7 + 12 = 5$"
+    "section": "基測會考題",
+    "type": "填充題",
+    "content": "\\CJKunderline{小星星}以 8 折優待的價錢，買了一些文具，總共花了 $x$ 元。若沒有此優待，則\\CJKunderline{小星星}原本應該要付\\rule[-2ex]{3cm}{0.4pt}\\raisebox{-0.8ex}{\\makebox[0pt][r]{\\makebox[3cm][c]{\\textbf{(1)}}}}元。（以 $x$ 列式）",
+    "answer": "$\\frac{5}{4}x$",
+    "solution": "打 8 折即為原價的 $0.8$ 倍（或 $\\frac{4}{5}$ 倍）。\\n設原價為 $P$ 元，則 $P \\times 0.8 = x \\implies P = \\frac{x}{0.8} = \\frac{x}{\\frac{4}{5}} = \\frac{5}{4}x$"
   },
   {
-    "id": "M01_002",
-    "concept": "M01整數的運算",
+    "id": "HG114_1_3_02",
+    "concept": "一元一次方程式>列一元一次式",
+    "difficulty": "基礎",
+    "section": "基測會考題",
+    "type": "填充題",
+    "content": "\\CJKunderline{鋒兄}有一臺研磨機，在運轉 20 秒後開始研磨咖啡豆，之後每運轉 10 秒可磨掉 50 公克的咖啡豆。以同樣的研磨速度，若要磨掉 $x$ 公克的咖啡豆，要運轉\\rule[-2ex]{3cm}{0.4pt}\\raisebox{-0.8ex}{\\makebox[0pt][r]{\\makebox[3cm][c]{\\textbf{(2)}}}}秒鐘。（以 $x$ 列式）",
+    "answer": "$20 + \\frac{x}{5}$",
+    "solution": "每 10 秒可磨 50 公克，即每磨 1 公克需要 $10 \\div 50 = \\frac{1}{5}$ 秒。\\n磨 $x$ 公克咖啡豆需要 $\\frac{1}{5}x$ 秒，再加上前置未研磨的 20 秒，共需 $\\left(20 + \\frac{x}{5}\\right)$ 秒。"
+  },
+  {
+    "id": "HG114_1_3_03",
+    "concept": "一元一次方程式>式子的化簡運算",
+    "difficulty": "基礎",
+    "section": "基測會考題",
+    "type": "填充題",
+    "content": "化簡 $5(2x-3)-4(3-2x) = $\\rule[-2ex]{3cm}{0.4pt}\\raisebox{-0.8ex}{\\makebox[0pt][r]{\\makebox[3cm][c]{\\textbf{(3)}}}}。",
+    "answer": "$18x - 27$",
+    "solution": "原式 $= 10x - 15 - 12 + 8x = (10x + 8x) + (-15 - 12) = 18x - 27$。"
+  },
+  {
+    "id": "HG114_1_3_04",
+    "concept": "一元一次方程式>解一元一次方程式",
+    "difficulty": "基礎",
+    "section": "基測會考題",
+    "type": "填充題",
+    "content": "一元一次方程式 $2x-\\frac{9-x}{3}=11$ 的解為\\rule[-2ex]{3cm}{0.4pt}\\raisebox{-0.8ex}{\\makebox[0pt][r]{\\makebox[3cm][c]{\\textbf{(4)}}}}。",
+    "answer": "$6$",
+    "solution": "等式兩邊同乘以 3：$6x - (9 - x) = 33 \\implies 6x - 9 + x = 33 \\implies 7x - 9 = 33 \\implies 7x = 42 \\implies x = 6$。"
+  },
+  {
+    "id": "HG114_1_3_05",
+    "concept": "一元一次方程式>式子的化簡運算",
+    "difficulty": "基礎",
+    "section": "基測會考題",
+    "type": "填充題",
+    "content": "化簡 $\\frac{x-1}{3} - \\frac{3x+1}{2} + 1$ 得\\rule[-2ex]{3cm}{0.4pt}\\raisebox{-0.8ex}{\\makebox[0pt][r]{\\makebox[3cm][c]{\\textbf{(5)}}}}。",
+    "answer": "$\\frac{-7x + 1}{6}$",
+    "solution": "通分分母為 6：\\n原式 $= \\frac{2(x-1) - 3(3x+1) + 6}{6} = \\frac{2x - 2 - 9x - 3 + 6}{6} = \\frac{-7x + 1}{6}$。"
+  },
+  {
+    "id": "HG114_1_3_06",
+    "concept": "一元一次方程式>解一元一次方程式",
+    "difficulty": "基礎",
+    "section": "基測會考題",
+    "type": "填充題",
+    "content": "解方程式 $(3x+2)-2[x-(2x+1)] = 6$，則其解為\\rule[-2ex]{3cm}{0.4pt}\\raisebox{-0.8ex}{\\makebox[0pt][r]{\\makebox[3cm][c]{\\textbf{(6)}}}}。",
+    "answer": "$\\frac{2}{5}$",
+    "solution": "先化簡中括號：$x - (2x + 1) = x - 2x - 1 = -x - 1$。\\n代回原式：$3x + 2 - 2(-x - 1) = 6 \\implies 3x + 2 + 2x + 2 = 6 \\implies 5x + 4 = 6 \\implies 5x = 2 \\implies x = \\frac{2}{5}$。"
+  },
+  {
+    "id": "HG114_1_3_07",
+    "concept": "一元一次方程式>式子的化簡運算",
+    "difficulty": "基礎",
+    "section": "基測會考題",
+    "type": "填充題",
+    "content": "化簡 $\\frac{1}{4}(-4x+8)-3(4-5x) = $\\rule[-2ex]{3cm}{0.4pt}\\raisebox{-0.8ex}{\\makebox[0pt][r]{\\makebox[3cm][c]{\\textbf{(7)}}}}。",
+    "answer": "$14x - 10$",
+    "solution": "原式 $= (-x + 2) - (12 - 15x) = -x + 2 - 12 + 15x = 14x - 10$。"
+  },
+  {
+    "id": "HG114_1_3_08",
+    "concept": "一元一次方程式>解一元一次方程式",
+    "difficulty": "基礎",
+    "section": "基測會考題",
+    "type": "填充題",
+    "content": "解方程式 $\\frac{1}{2}(3x-5) + \\frac{1}{3}(x-2) = \\frac{7}{2}$，則其解為\\rule[-2ex]{3cm}{0.4pt}\\raisebox{-0.8ex}{\\makebox[0pt][r]{\\makebox[3cm][c]{\\textbf{(8)}}}}。",
+    "answer": "$\\frac{40}{11}$",
+    "solution": "等式兩邊同乘以 6：$3(3x - 5) + 2(x - 2) = 21 \\implies 9x - 15 + 2x - 4 = 21 \\implies 11x - 19 = 21 \\implies 11x = 40 \\implies x = \\frac{40}{11}$。"
+  },
+  {
+    "id": "HG114_1_3_09",
+    "concept": "一元一次方程式>應用問題",
+    "difficulty": "基礎",
+    "section": "基測會考題",
+    "type": "填充題",
+    "content": "\\CJKunderline{華崗山}地區山泉水與水桶的售價，每逢假日以特價出售，如下表所示。若\\CJKunderline{珮珮}假日到\\CJKunderline{華崗山}遊玩，用販賣的水桶裝 6 公升的山泉水回家飲用，共花了 330 元，則山泉水的特價每公升為\\rule[-2ex]{3cm}{0.4pt}\\raisebox{-0.8ex}{\\makebox[0pt][r]{\\makebox[3cm][c]{\\textbf{(9)}}}}元。\\n{\\centering\\n\\begin{tabular}{|c|c|}\\n\\hline\\n項目 & 單價 \\\\ \\hline\\n山泉水 & 70 元 / 公升 (平日) \\\\ \\n & ? 元 / 公升 (特價) \\\\ \\hline\\n水桶 (容量 3 公升) & 60 元 / 個 \\\\ \\hline\\n\\end{tabular}\\par}",
+    "answer": "$35$",
+    "solution": "要裝 6 公升的山泉水，需要 $6 \\div 3 = 2$ 個水桶。\\n買 2 個水桶的花費為 $60 \\times 2 = 120$ 元。\\n則 6 公升特價山泉水共花了 $330 - 120 = 210$ 元。\\n山泉水特價每公升為 $210 \\div 6 = 35$ 元。"
+  },
+  {
+    "id": "HG114_1_3_10",
+    "concept": "一元一次方程式>列一元一次方程式",
+    "difficulty": "基礎",
+    "section": "基測會考題",
+    "type": "填充題",
+    "content": "\\CJKunderline{兆祥}帶 $x$ 元去買甜點，若全買紅豆湯圓剛好可買 30 杯，若全買豆花剛好可買 40 杯。已知豆花每杯比紅豆湯圓便宜 10 元，依題意可列出方程式為\\rule[-2ex]{4cm}{0.4pt}\\raisebox{-0.8ex}{\\makebox[0pt][r]{\\makebox[4cm][c]{\\textbf{(10)}}}}。（以 $x$ 列式）",
+    "answer": "$\\frac{x}{30} - \\frac{x}{40} = 10$",
+    "solution": "紅豆湯圓每杯 $\\frac{x}{30}$ 元，豆花每杯 $\\frac{x}{40}$ 元。\\n依題意「豆花比紅豆湯圓便宜 10 元」可列式為 $\\frac{x}{30} - \\frac{x}{40} = 10$。"
+  },
+  {
+    "id": "HG114_1_3_11",
+    "concept": "一元一次方程式>應用問題",
+    "difficulty": "基礎",
+    "section": "基測會考題",
+    "type": "填充題",
+    "content": "\\CJKunderline{婉淨}前三次的考試成績分別為 87、83、88 分。若她在第四次考試後，計算四次的平均分數，發現比前三次的平均分數多 1 分，則\\CJKunderline{婉淨}第四次的成績為\\rule[-2ex]{3cm}{0.4pt}\\raisebox{-0.8ex}{\\makebox[0pt][r]{\\makebox[3cm][c]{\\textbf{(11)}}}}分。",
+    "answer": "$90$",
+    "solution": "前三次總分 $= 87 + 83 + 88 = 258$ 分，前三次平均 $= 258 \\div 3 = 86$ 分。\\n四次平均比前三次多 1 分，故四次平均 $= 86 + 1 = 87$ 分。\\n四次總分 $= 87 \\times 4 = 348$ 分。\\n第四次成績 $= 348 - 258 = 90$ 分。"
+  },
+  {
+    "id": "HG114_1_3_12",
+    "concept": "一元一次方程式>應用問題",
+    "difficulty": "基礎",
+    "section": "基測會考題",
+    "type": "填充題",
+    "content": "在如下的方格中，填入適當的數字，使得每行、每列以及對角線上的數字和是相同的，則 $\\bigstar$ 的值為\\rule[-2ex]{3cm}{0.4pt}\\raisebox{-0.8ex}{\\makebox[0pt][r]{\\makebox[3cm][c]{\\textbf{(12)}}}}。\\n{\\centering\\n\\begin{tabular}{|>{\\centering\\arraybackslash}m{1.2cm}|>{\\centering\\arraybackslash}m{1.2cm}|>{\\centering\\arraybackslash}m{1.2cm}|}\\n\\hline\\n16 & \\rule{0pt}{1.2cm} & 14 \\\\ \\hline\\n$\\bigstar$ & \\rule{0pt}{1.2cm} & 15 \\\\ \\hline\\n12 & \\rule{0pt}{1.2cm} & \\\\ \\hline\\n\\end{tabular}\\par}",
+    "answer": "$11$",
+    "solution": "設九宮格中心（第二行第二列）的數字為 $M$。\\n由對角線與行/列和相等性質，九宮格的「定和」等於中心數的 3 倍，即 $3M$。\\n右上角到左下角的對角線和為 $14 + M + 12 = M + 26$，故定和 $= M + 26$。\\n由此可得 $3M = M + 26 \\implies 2M = 26 \\implies M = 13$，定和為 $3 \\times 13 = 39$。\\n第一列中間數字 $= 39 - 16 - 14 = 9$。\\n第二列（橫列）中：$\\bigstar + 13 + 15 = 39 \\implies \\bigstar = 39 - 28 = 11$。"
+  },
+  {
+    "id": "HG114_1_3_13",
+    "concept": "一元一次方程式>應用問題",
+    "difficulty": "基礎",
+    "section": "基測會考題",
+    "type": "填充題",
+    "content": "\\CJKunderline{玉揚}的遊戲機充滿電後可用來連續播放音樂 36 個小時或連續玩遊戲 6 個小時。若遊戲機在早上 7 點充滿電後，\\CJKunderline{玉揚}馬上使用遊戲機播放音樂直到下午 3 點，並從下午 3 點繼續使用遊戲機玩遊戲直到它沒電，則他的遊戲機何時會沒電？答：\\rule[-2ex]{3cm}{0.4pt}\\raisebox{-0.8ex}{\\makebox[0pt][r]{\\makebox[3cm][c]{\\textbf{(13)}}}}。",
+    "answer": "19:40",
+    "solution": "早上 7 點到下午 3 點（15 點）共經過 $15 - 7 = 8$ 小時。\\n聽音樂 8 小時消耗電量 $\\frac{8}{36} = \\frac{2}{9}$，剩餘電量 $1 - \\frac{2}{9} = \\frac{7}{9}$。\\n剩餘電量全部用來玩遊戲，可玩 $6 \\times \\frac{7}{9} = \\frac{14}{3} = 4\\frac{2}{3}$ 小時（即 4 小時 40 分鐘）。\\n下午 3 點加上 4 小時 40 分鐘為晚上 7 點 40 分（或 19 點 40 分）。"
+  },
+  {
+    "id": "HG114_1_3_14",
+    "concept": "一元一次方程式>應用問題",
+    "difficulty": "基礎",
+    "section": "基測會考題",
+    "type": "填充題",
+    "content": "已知甲、乙、丙三人各有一些錢，其中甲的錢是乙的 2倍，乙比丙多 1 元，丙比甲少 11 元，求三人的錢共有\\rule[-2ex]{3cm}{0.4pt}\\raisebox{-0.8ex}{\\makebox[0pt][r]{\\makebox[3cm][c]{\\textbf{(14)}}}}元。",
+    "answer": "$39$",
+    "solution": "設乙有 $x$ 元，則甲有 $2x$ 元，丙有 $(x - 1)$ 元。\\n由「丙比甲少 11 元」可列式：$2x - (x - 1) = 11 \\implies x + 1 = 11 \\implies x = 10$。\\n故乙有 10 元，甲有 $2 \\times 10 = 20$ 元，丙有 $10 - 1 = 9$ 元。\\n三人共有 $20 + 10 + 9 = 39$ 元。"
+  },
+  {
+    "id": "HG114_1_3_15",
+    "concept": "一元一次方程式>應用問題",
+    "difficulty": "基礎",
+    "section": "基測會考題",
+    "type": "填充題",
+    "content": "\\CJKunderline{珮郁}有紅牌 16 張，黑牌 18 張，混合後分成甲、乙兩堆。已知甲堆比乙堆多 12 張，且甲堆中的紅牌比乙堆中的黑牌多 5 張，則甲堆中的黑牌比乙堆中的紅牌多\\rule[-2ex]{3cm}{0.4pt}\\raisebox{-0.8ex}{\\makebox[0pt][r]{\\makebox[3cm][c]{\\textbf{(15)}}}}張。",
+    "answer": "$7$",
+    "solution": "總卡牌數 $= 16 + 18 = 34$ 張。\\n設乙堆有 $y$ 張，則甲堆有 $(y + 12)$ 張。\\n$y + (y + 12) = 34 \\implies 2y = 22 \\implies y = 11$（乙堆 11 張，甲堆 23 張）。\\n設乙堆有黑牌 $k$ 張，則甲堆有紅牌 $(k + 5)$ 張。\\n乙堆共 11 張，故乙堆紅牌數 $= 11 - k$；\\n甲堆共 23 張，故甲堆黑牌數 $= 23 - (k + 5) = 18 - k$。\\n甲堆黑牌比乙堆紅牌多：$(18 - k) - (11 - k) = 7$ 張。"
+  },
+  {
+    "id": "HG114_1_3_16",
+    "concept": "一元一次方程式>應用問題",
+    "difficulty": "基礎",
+    "section": "基測會考題",
+    "type": "填充題",
+    "content": "\\CJKunderline{珈沂}將一條白繩的 $\\frac{3}{8}$ 與一條紅繩的 $\\frac{1}{3}$ 重疊並以膠帶黏合，形成一條長度為 238 公分的繩子。求黏合前，兩條繩子原本相差\\rule[-2ex]{3cm}{0.4pt}\\raisebox{-0.8ex}{\\makebox[0pt][r]{\\makebox[3cm][c]{\\textbf{(16)}}}}公分。\\n\\begin{center}\\n\\begin{tikzpicture}[x=1cm, y=1cm, >=stealth]\\n    \\draw[dashed, thick] (3, 1.5) -- (3, -1.5);\\n    \\draw[dashed, thick] (5, 1.5) -- (5, -1.5);\\n    \\draw[ultra thick] (0.5, 0.7) -- (5, 0.7);\\n    \\node[above] at (1.8, 0.7) {白繩};\\n    \\draw[ultra thick] (3, -0.3) -- (8, -0.3);\\n    \\node[above] at (6.7, -0.3) {紅繩};\\n    \\node[below] at (4, -0.8) {重疊黏合處};\\n\\end{tikzpicture}\\n\\end{center}",
+    "answer": "$17$",
+    "solution": "因為重疊部分長度相等，即 $\\text{白繩} \\times \\frac{3}{8} = \\text{紅繩} \\times \\frac{1}{3}$。\\n設重疊部分為 $x$ 公分，則白繩長為 $\\frac{8}{3}x$ 公分，紅繩長為 $3x$ 公分。\\n黏合後的總長度 $= \\text{白繩長} + \\text{紅繩長} - \\text{重疊長} = \\frac{8}{3}x + 3x - x = \\frac{14}{3}x$。\\n依題意：$\\frac{14}{3}x = 238 \\implies x = 238 \\times \\frac{3}{14} = 51$ 公分。\\n白繩原本長 $= \\frac{8}{3} \\times 51 = 136$ 公分，紅繩原本長 $= 3 \\times 51 = 153$ 公分。\\n兩繩原本相差 $153 - 136 = 17$ 公分。"
+  },
+  {
+    "id": "HG114_1_3_17",
+    "concept": "一元一次方程式>列一元一次式",
     "difficulty": "進階",
-    "content": "如下圖，數線上 $A$、$B$ 兩點所表示的數分別為 $-3$ 與 $5$，求 $\\overline{AB}$ 的長度。\\n\\begin{center}\\n\\begin{tikzpicture}\\n\\draw[-stealth, thick] (-4,0) -- (6,0);\\n\\filldraw (-3,0) circle (2pt) node[above] {$A(-3)$};\\n\\filldraw (5,0) circle (2pt) node[above] {$B(5)$};\\n\\end{tikzpicture}\\n\\end{center}",
-    "solution": "$\\overline{AB} = |5 - (-3)| = 8$"
+    "section": "進階能力題",
+    "type": "填充題",
+    "content": "已知\\CJKunderline{芳鄰社區}某棟大樓共有 20 個樓層，其中一樓樓高為 4 公尺，其餘樓層樓高皆相同。若該棟大樓高度為 $y$ 公尺（不包含頂樓），則其餘每層樓高為\\rule[-2ex]{3cm}{0.4pt}\\raisebox{-0.8ex}{\\makebox[0pt][r]{\\makebox[3cm][c]{\\textbf{(17)}}}}公尺。（以 $y$ 列式）",
+    "answer": "$\\frac{y-4}{19}$",
+    "solution": "扣除一樓的 4 公尺後，剩下的高度為 $(y - 4)$ 公尺。\\n其餘樓層共有 $20 - 1 = 19$ 層，故每層樓高為 $\\frac{y - 4}{19}$ 公尺。"
   },
   {
-    "id": "M02_001",
-    "concept": "M02一元一次方程式",
-    "difficulty": "基礎",
-    "content": "求方程式 $3x - 5 = 10$ 的解。",
-    "solution": "$3x = 15 \\implies x = 5$"
+    "id": "HG114_1_3_18",
+    "concept": "一元一次方程式>解一元一次方程式",
+    "difficulty": "進階",
+    "section": "進階能力題",
+    "type": "填充題",
+    "content": "解方程式 $0.5 = \\frac{0.27}{0.3} + \\frac{0.09x - 0.18}{0.9}$，則 $x = $\\rule[-2ex]{3cm}{0.4pt}\\raisebox{-0.8ex}{\\makebox[0pt][r]{\\makebox[3cm][c]{\\textbf{(18)}}}}。",
+    "answer": "$-2$",
+    "solution": "先化簡分數：$\\frac{0.27}{0.3} = 0.9$，$\\frac{0.09x - 0.18}{0.9} = 0.1x - 0.2$。\\n原式變為：$0.5 = 0.9 + 0.1x - 0.2 \\implies 0.5 = 0.7 + 0.1x \\implies 0.1x = -0.2 \\implies x = -2$。"
   },
   {
-    "id": "M03_001",
-    "concept": "M03乘法公式",
-    "difficulty": "基礎",
-    "content": "展開 $(2x - 3)^2$。",
-    "solution": "$(2x)^2 - 2 \\cdot 2x \\cdot 3 + 3^2 = 4x^2 - 12x + 9$"
+    "id": "HG114_1_3_19",
+    "concept": "一元一次方程式>算式的求值＋式子的化簡運算",
+    "difficulty": "進階",
+    "section": "進階能力題",
+    "type": "填充題",
+    "content": "已知 $\\frac{4x}{3} + \\frac{6x}{5} + \\frac{8x}{7} = 123$，則 $\\frac{4x-9}{3} + \\frac{6x-20}{5} + \\frac{8x-35}{7} = $ \\rule[-2ex]{3cm}{0.4pt}\\raisebox{-0.8ex}{\\makebox[0pt][r]{\\makebox[3cm][c]{\\textbf{(19)}}}}。",
+    "answer": "$111$",
+    "solution": "拆開所求算式：\\n$\\left(\\frac{4x}{3} - \\frac{9}{3}\\right) + \\left(\\frac{6x}{5} - \\frac{20}{5}\\right) + \\left(\\frac{8x}{7} - \\frac{35}{7}\\right) = \\left(\\frac{4x}{3} + \\frac{6x}{5} + \\frac{8x}{7}\\right) - (3 + 4 + 5) = 123 - 12 = 111$。"
   },
   {
-    "id": "M04_001",
-    "concept": "M04根號的運算",
-    "difficulty": "基礎",
-    "content": "化簡 $\\sqrt{12} + \\sqrt{27}$。",
-    "solution": ""
+    "id": "HG114_1_3_20",
+    "concept": "一元一次方程式>解一元一次方程式",
+    "difficulty": "進階",
+    "section": "進階能力題",
+    "type": "填充題",
+    "content": "解方程式 $\\frac{1}{3}\\left\\{\\frac{1}{3}\\left[\\frac{1}{3}\\left(\\frac{1}{3}x - 3\\right) - 3\\right] - 3\\right\\} - 3 = 3$，得 $x = $\\rule[-2ex]{3cm}{0.4pt}\\raisebox{-0.8ex}{\\makebox[0pt][r]{\\makebox[3cm][c]{\\textbf{(20)}}}}。",
+    "answer": "$603$",
+    "solution": "由最外層逐步還原：\\n$\\frac{1}{3}\\{\\dots\\} - 3 = 3 \\implies \\frac{1}{3}\\{\\dots\\} = 6 \\implies \\{\\dots\\} = 18$；\\n$\\frac{1}{3}[\\dots] - 3 = 18 \\implies \\frac{1}{3}[\\dots] = 21 \\implies [\\dots] = 63$；\\n$\\frac{1}{3}(\\frac{1}{3}x - 3) - 3 = 63 \\implies \\frac{1}{3}(\\frac{1}{3}x - 3) = 66 \\implies \\frac{1}{3}x - 3 = 198$；\\n$\\frac{1}{3}x = 201 \\implies x = 603$。"
+  },
+  {
+    "id": "HG114_1_3_21",
+    "concept": "一元一次方程式>列一元一次式＋應用問題",
+    "difficulty": "進階",
+    "section": "進階能力題",
+    "type": "填充題",
+    "content": "\\CJKunderline{偌竺}的手工煎餃定價為 $x$ 元時，可獲利成本的 $20\\%$；若將\\CJKunderline{偌竺}手工煎餃重訂一新價格再打九折後，可獲利成本的 $17\\%$，則新價格應訂為\\rule[-2ex]{3cm}{0.4pt}\\raisebox{-0.8ex}{\\makebox[0pt][r]{\\makebox[3cm][c]{\\textbf{(21)}}}}元。（以 $x$ 列式）",
+    "answer": "$\\frac{13}{12}x$",
+    "solution": "定價 $x$ 元等於成本的 $1 + 20\\% = 1.2$ 倍，故成本 $= \\frac{x}{1.2} = \\frac{5}{6}x$ 元。\\n獲利成本的 $17\\%$，表示售價為成本的 $1.17$ 倍，即售價 $= \\frac{5}{6}x \\times 1.17$ 元。\\n設新價格為 $P$，則 $P \\times 0.9 = \\frac{5}{6}x \\times 1.17 \\implies P = \\frac{5}{6}x \\times \\frac{1.17}{0.9} = \\frac{5}{6}x \\times 1.3 = \\frac{6.5}{6}x = \\frac{13}{12}x$。"
+  },
+  {
+    "id": "HG114_1_3_22",
+    "concept": "一元一次方程式>解一元一次方程式",
+    "difficulty": "進階",
+    "section": "進階能力題",
+    "type": "填充題",
+    "content": "\\CJKunderline{佳顰}在解方程式 $2x - 5 = m(x - 2)$ 時，誤把 $m$ 的正負號看錯而得到 $x = 3$，則正確的 $x$ 值為\\rule[-2ex]{3cm}{0.4pt}\\raisebox{-0.8ex}{\\makebox[0pt][r]{\\makebox[3cm][c]{\\textbf{(22)}}}}。",
+    "answer": "$\\frac{7}{3}$",
+    "solution": "看錯正負號即把 $m$ 看成 $-m$，算出的解為 $x = 3$。\\n將 $x = 3$ 代入 $2x - 5 = -m(x - 2)$：$2(3) - 5 = -m(3 - 2) \\implies 1 = -m \\implies m = -1$。\\n原正確方程式為：$2x - 5 = -1(x - 2) \\implies 2x - 5 = -x + 2 \\implies 3x = 7 \\implies x = \\frac{7}{3}$。"
+  },
+  {
+    "id": "HG114_1_3_23",
+    "concept": "一元一次方程式>應用問題",
+    "difficulty": "進階",
+    "section": "進階能力題",
+    "type": "填充題",
+    "content": "\\CJKunderline{花崗國中}七年級新生編班，在總班級數不變的情況下，若每一班編成 26 人，會多出 12 人；若每一班編成 30 人，會少 20 人，則七年級新生共有\\rule[-2ex]{3cm}{0.4pt}\\raisebox{-0.8ex}{\\makebox[0pt][r]{\\makebox[3cm][c]{\\textbf{(23)}}}}人。",
+    "answer": "$220$",
+    "solution": "設共有 $x$ 個班級。\\n根據學生人數列式：$26x + 12 = 30x - 20 \\implies 4x = 32 \\implies x = 8$。\\n學生總人數 $= 26 \\times 8 + 12 = 208 + 12 = 220$ 人。"
+  },
+  {
+    "id": "HG114_1_3_24",
+    "concept": "一元一次方程式>解一元一次方程式",
+    "difficulty": "進階",
+    "section": "進階能力題",
+    "type": "填充題",
+    "content": "一元一次方程式 $\\frac{987}{654}x - \\frac{654}{987} = \\frac{654}{987}x - \\frac{654}{987}$，則 $x = $\\rule[-2ex]{3cm}{0.4pt}\\raisebox{-0.8ex}{\\makebox[0pt][r]{\\makebox[3cm][c]{\\textbf{(24)}}}}。",
+    "answer": "$0$",
+    "solution": "兩邊同時加上 $\\frac{654}{987}$ 得：$\\frac{987}{654}x = \\frac{654}{987}x$。\\n移項得：$\\left(\\frac{987}{654} - \\frac{654}{987}\\right)x = 0$。\\n因為 $\\frac{987}{654} \\neq \\frac{654}{987}$，故 $x = 0$。"
+  },
+  {
+    "id": "HG114_1_3_25",
+    "concept": "一元一次方程式>應用問題",
+    "difficulty": "進階",
+    "section": "進階能力題",
+    "type": "填充題",
+    "content": "\\CJKunderline{小芝}有 20 個彈珠，\\CJKunderline{小杰}有 64 個彈珠。兩人玩猜拳遊戲，若\\CJKunderline{小芝}贏，\\CJKunderline{小杰}要給\\CJKunderline{小芝} 8 個彈珠；若\\CJKunderline{小杰}贏，\\CJKunderline{小芝}就給\\CJKunderline{小杰} 4 個彈珠。經過多次的猜拳遊戲之後，\\CJKunderline{小芝}的彈珠是\\CJKunderline{小杰}彈珠的 2 倍，則\\CJKunderline{小芝}最後有彈珠\\rule[-2ex]{3cm}{0.4pt}\\raisebox{-0.8ex}{\\makebox[0pt][r]{\\makebox[3cm][c]{\\textbf{(25)}}}}個。",
+    "answer": "$56$",
+    "solution": "兩人彈珠總數固定不變：$20 + 64 = 84$ 個。\\n結束時，小芝的彈珠是小杰的 2 倍。\\n設小杰最後有 $x$ 個彈珠，則小芝有 $2x$ 個。\\n$x + 2x = 84 \\implies 3x = 84 \\implies x = 28$。\\n故小芝最後有 $28 \\times 2 = 56$ 個彈珠。"
+  },
+  {
+    "id": "HG114_1_3_26",
+    "concept": "一元一次方程式>應用問題",
+    "difficulty": "進階",
+    "section": "進階能力題",
+    "type": "填充題",
+    "content": "七年甲班有 30 位學生，若男生每人吃 2 個麵包，女生每 3 人合吃 2 個麵包，總共吃掉 36 個麵包，則女生有\\rule[-2ex]{3cm}{0.4pt}\\raisebox{-0.8ex}{\\makebox[0pt][r]{\\makebox[3cm][c]{\\textbf{(26)}}}}人。",
+    "answer": "$18$",
+    "solution": "設女生有 $y$ 人，則男生有 $(30 - y)$ 人。\\n男生共吃 $2(30 - y)$ 個麵包，女生共吃 $\\frac{2}{3}y$ 個麵包。\\n列式：$2(30 - y) + \\frac{2}{3}y = 36 \\implies 60 - 2y + \\frac{2}{3}y = 36 \\implies \\frac{4}{3}y = 24 \\implies y = 18$。"
+  },
+  {
+    "id": "HG114_1_3_27",
+    "concept": "一元一次方程式>解一元一次方程式＋分數的加減",
+    "difficulty": "進階",
+    "section": "素養活用題",
+    "type": "填充題",
+    "content": "解方程式 $\\frac{x}{30} + \\frac{x}{42} + \\frac{x}{56} = 3$，則 $x = \\rule[-2ex]{3cm}{0.4pt}\\raisebox{-0.8ex}{\\makebox[0pt][r]{\\makebox[3cm][c]{\\textbf{(27)}}}}$。",
+    "answer": "$40$",
+    "solution": "將分數拆項：$\\frac{1}{30} = \\frac{1}{5 \\times 6} = \\frac{1}{5} - \\frac{1}{6}$，$\\frac{1}{42} = \\frac{1}{6 \\times 7} = \\frac{1}{6} - \\frac{1}{7}$，$\\frac{1}{56} = \\frac{1}{7 \\times 8} = \\frac{1}{7} - \\frac{1}{8}$。\\n提取 $x$：$x\\left(\\frac{1}{5} - \\frac{1}{6} + \\frac{1}{6} - \\frac{1}{7} + \\frac{1}{7} - \\frac{1}{8}\\right) = 3 \\implies x\\left(\\frac{1}{5} - \\frac{1}{8}\\right) = 3 \\implies x \\times \\frac{3}{40} = 3 \\implies x = 40$。"
+  },
+  {
+    "id": "HG114_1_3_28",
+    "concept": "一元一次方程式>解一元一次方程式",
+    "difficulty": "進階",
+    "section": "素養活用題",
+    "type": "填充題",
+    "content": "解方程式 $\\frac{x-4}{2022} + \\frac{x-3}{2023} + \\frac{x-2}{2024} + \\frac{x-1}{2025} = 4$，則 $x = \\rule[-2ex]{3cm}{0.4pt}\\raisebox{-0.8ex}{\\makebox[0pt][r]{\\makebox[3cm][c]{\\textbf{(28)}}}}$。",
+    "answer": "$2026$",
+    "solution": "將等號右邊的 4 拆成 4 個 1 移項至左邊：\\n$\\left(\\frac{x-4}{2022} - 1\\right) + \\left(\\frac{x-3}{2023} - 1\\right) + \\left(\\frac{x-2}{2024} - 1\\right) + \\left(\\frac{x-1}{2025} - 1\\right) = 0$\\n$\\implies \\frac{x-2026}{2022} + \\frac{x-2026}{2023} + \\frac{x-2026}{2024} + \\frac{x-2026}{2025} = 0$\\n$\\implies (x - 2026)\\left(\\frac{1}{2022} + \\frac{1}{2023} + \\frac{1}{2024} + \\frac{1}{2025}\\right) = 0$\\n因為括號內不為 0，故 $x - 2026 = 0 \\implies x = 2026$。"
+  },
+  {
+    "id": "HG114_1_3_29",
+    "concept": "一元一次方程式>解一元一次方程式",
+    "difficulty": "進階",
+    "section": "素養活用題",
+    "type": "填充題",
+    "content": "$abc \\neq 0$且 $\\frac{1}{a} + \\frac{1}{b} + \\frac{1}{c} \\neq 0$，若 $\\frac{x-a-b}{c} + \\frac{x-b-c}{a} + \\frac{x-c-a}{b} = 3$，則將 $x$ 的解以 $a$、$b$、$c$ 表示為\\rule[-2ex]{4cm}{0.4pt}\\raisebox{-0.8ex}{\\makebox[0pt][r]{\\makebox[4cm][c]{\\textbf{(29)}}}}。",
+    "answer": "$a+b+c$",
+    "solution": "將等號右邊的 3 拆成 3 個 1 移項至左邊：\\n$\\left(\\frac{x-a-b}{c} - 1\\right) + \\left(\\frac{x-b-c}{a} - 1\\right) + \\left(\\frac{x-c-a}{b} - 1\\right) = 0$\\n$\\implies \\frac{x-a-b-c}{c} + \\frac{x-a-b-c}{a} + \\frac{x-a-b-c}{b} = 0$\\n$\\implies (x - a - b - c)\\left(\\frac{1}{a} + \\frac{1}{b} + \\frac{1}{c}\\right) = 0$\\n因為 $\\frac{1}{a} + \\frac{1}{b} + \\frac{1}{c} \\neq 0$，故 $x - a - b - c = 0 \\implies x = a + b + c$。"
+  },
+  {
+    "id": "HG114_1_3_30",
+    "concept": "一元一次方程式>應用問題",
+    "difficulty": "進階",
+    "section": "素養活用題",
+    "type": "填充題",
+    "content": "甲、乙、丙、丁四人共 39 歲，若甲加上 1，乙減去 2，丙乘以 3，丁除以 4 之後，四人的年齡皆相等，則丁原本為\\rule[-2ex]{3cm}{0.4pt}\\raisebox{-0.8ex}{\\makebox[0pt][r]{\\makebox[3cm][c]{\\textbf{(30)}}}}歲。",
+    "answer": "$24$",
+    "solution": "設變換後相等的年齡為 $k$。\\n則甲原本有 $(k - 1)$ 歲，乙原本有 $(k + 2)$ 歲，丙原本有 $\\frac{k}{3}$ 歲，丁原本有 $4k$ 歲。\\n四人年齡和：$(k - 1) + (k + 2) + \\frac{k}{3} + 4k = 39 \\implies 6k + 1 + \\frac{k}{3} = 39 \\implies \\frac{19}{3}k = 38 \\implies k = 6$。\\n丁原本為 $4k = 4 \\times 6 = 24$ 歲。"
+  },
+  {
+    "id": "HG114_1_3_31",
+    "concept": "一元一次方程式>應用問題",
+    "difficulty": "進階",
+    "section": "素養活用題",
+    "type": "填充題",
+    "content": "古希臘數學家\\CJKunderline{丟番圖}的墓碑上寫道：「過路人，這座石墓裡安葬著\\CJKunderline{丟番圖}。他生命的 $\\frac{1}{6}$ 是幸福的童年，生命的 $\\frac{1}{12}$ 是青少年時期。又過了生命的 $\\frac{1}{7}$ 他才結婚。婚後 5 年有了一個孩子，孩子活到他父親一半的年紀便死去了。孩子死後，\\CJKunderline{丟番圖}在深深的悲哀中又活了 4 年，也結束了塵世生涯。過路人，你能知道\\CJKunderline{丟番圖}的年紀嗎？」答：\\rule[-2ex]{3cm}{0.4pt}\\raisebox{-0.8ex}{\\makebox[0pt][r]{\\makebox[3cm][c]{\\textbf{(31)}}}}歲。",
+    "answer": "$84$",
+    "solution": "設丟番圖活了 $x$ 歲。\\n依題意列方程：$\\frac{1}{6}x + \\frac{1}{12}x + \\frac{1}{7}x + 5 + \\frac{1}{2}x + 4 = x$。\\n同類項合併：$\\left(\\frac{1}{6} + \\frac{1}{12} + \\frac{1}{7} + \\frac{1}{2}\\right)x + 9 = x \\implies \\left(\\frac{14 + 7 + 12 + 42}{84}\\right)x + 9 = x \\implies \\frac{75}{84}x + 9 = x \\implies \\frac{25}{28}x + 9 = x$。\\n移項得：$\\frac{3}{28}x = 9 \\implies x = 84$。"
+  },
+  {
+    "id": "HG114_1_3_32",
+    "concept": "一元一次方程式>應用問題",
+    "difficulty": "進階",
+    "section": "非選應用題",
+    "type": "非選題",
+    "content": "\\CJKunderline{灰熊爺爺}收成了好多柳丁，第一次賣出全部的一半多 3 個，第二次賣出剩下的 $\\frac{1}{3}$ 少 6 個，第三次賣出剩下的一半少 2 個，最後還剩下 30 個柳丁，試求\\CJKunderline{灰熊爺爺}共收成多少個柳丁？",
+    "answer": "共收成 156 個柳丁",
+    "solution": "採用倒推法計算：\\n1. 第三次賣出前剩餘：$(30 - 2) \\div \\left(1 - \\frac{1}{2}\\right) = 28 \\div \\frac{1}{2} = 56$ 個。\\n2. 第二次賣出前剩餘：$(56 - 6) \\div \\left(1 - \\frac{1}{3}\\right) = 50 \\div \\frac{2}{3} = 75$ 個。\\n3. 第一次賣出前（原本總共）：$(75 + 3) \\div \\left(1 - \\frac{1}{2}\\right) = 78 \\div \\frac{1}{2} = 156$ 個。"
+  },
+  {
+    "id": "HG114_1_3_33",
+    "concept": "一元一次方程式>應用問題",
+    "difficulty": "進階",
+    "section": "非選應用題",
+    "type": "非選題",
+    "content": "已知\\CJKunderline{楹璁大師}手工畫作以定價的八折賣出，則賠本 420 元；如果改以定價的九五折賣出，可賺 300 元。請問\\CJKunderline{楹璁大師}手工畫作的成本是多少元？",
+    "answer": "成本為 4260 元",
+    "solution": "設畫作定價為 $x$ 元。\\n八折賣出的售價為 $0.8x$ 元，此時成本 $= 0.8x + 420$ 元。\\n九五折賣出的售價為 $0.95x$ 元，此時成本 $= 0.95x - 300$ 元。\\n列式：$0.8x + 420 = 0.95x - 300 \\implies 0.15x = 720 \\implies x = 4800$。\\n成本 $= 0.8 \\times 4800 + 420 = 3840 + 420 = 4260$ 元。"
   }
 ]
