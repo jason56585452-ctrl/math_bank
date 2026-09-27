@@ -1026,9 +1026,9 @@
     "unit": "M01 整數的運算",
     "concept": "負數與數線",
     "difficulty": "基礎",
-    "type": "填充題",
-    "content": "0206 大地震後，可到\\CJKunderline{米崙}研究地層移動的情形，若地層上升 8 公分以 $+2$ 表示，則筆記簿上記錄是 $-20$ 的地區表示地層下陷多少公尺？ \\rule[-2ex]{3cm}{0.4pt}\\raisebox{-0.8ex}{\\makebox[0pt][r]{\\makebox[3cm][c]{\\textbf{(1)}}}} \\\\\n(A) 20 \\quad (B) 10 \\quad (C) 80 \\quad (D) 0.8",
-    "answer": "(D)",
+    "type": "選擇題",
+    "content": "0206 大地震後，可到\\CJKunderline{米崙}研究地層移動的情形，若地層上升 8 公分以 $+2$ 表示，則筆記簿上記錄是 $-20$ 的地區表示地層下陷多少公尺？ \\\\\n(A) 20 \\quad (B) 10 \\quad (C) 80 \\quad (D) 0.8",
+    "answer": "D",
     "solution": "由 $+2$ 表示上升 8 公分，可知單位比值為 $8 \\div 2 = 4$（即 $+1$ 代表上升 4 公分）。\n記錄 $-20$ 表示下陷：$20 \\times 4 = 80$ 公分。\n換算成公尺：$80 \\text{ 公分} = 0.8 \\text{ 公尺}$。"
   },
   {
@@ -1038,9 +1038,9 @@
     "unit": "M01 整數的運算",
     "concept": "負數與數線",
     "difficulty": "基礎",
-    "type": "填充題",
-    "content": "若 $|\\text{甲}| + |\\text{乙}| = 0$，則下列何者不可能發生？ \\rule[-2ex]{3cm}{0.4pt}\\raisebox{-0.8ex}{\\makebox[0pt][r]{\\makebox[3cm][c]{\\textbf{(1)}}}} \\\\\n(A) 甲 $=$ 乙 $= 0$ \\quad (B) 甲 $= 1$，乙 $= -1$ \\quad (C) 甲 $+$ 乙 $= 0$ \\quad (D) 甲 $-$ 乙 $= 0$",
-    "answer": "(B)",
+    "type": "選擇題",
+    "content": "若 $|\\text{甲}| + |\\text{乙}| = 0$，則下列何者不可能發生？ \\\\\n(A) 甲 $=$ 乙 $= 0$ \\quad (B) 甲 $= 1$，乙 $= -1$ \\quad (C) 甲 $+$ 乙 $= 0$ \\quad (D) 甲 $-$ 乙 $= 0$",
+    "answer": "B",
     "solution": "因為任意數的絕對值恆大於或等於 0（即 $|\\text{甲}| \\ge 0$、 $|\\text{乙}| \\ge 0$）。\n兩非負數相加為 0，唯有甲 $= 0$ 且乙 $= 0$ 成立。\n因此，甲 $= 1$、乙 $= -1$ 不可能發生。"
   },
   {
@@ -1050,9 +1050,9 @@
     "unit": "M01 整數的運算",
     "concept": "負數與數線",
     "difficulty": "基礎",
-    "type": "填充題",
-    "content": "下列敘述何者正確？ \\rule[-2ex]{3cm}{0.4pt}\\raisebox{-0.8ex}{\\makebox[0pt][r]{\\makebox[3cm][c]{\\textbf{(1)}}}} \\\\\n(A) 最大負數為 $-1$ \\quad (B) 最大負整數為 $-1$ \\quad (C) 最小正數為 1 \\quad (D) 最小負數為 $-1$",
-    "answer": "(B)",
+    "type": "選擇題",
+    "content": "下列敘述何者正確？ \\\\\n(A) 最大負數為 $-1$ \\quad (B) 最大負整數為 $-1$ \\quad (C) 最小正數為 1 \\quad (D) 最小負數為 $-1$",
+    "answer": "B",
     "solution": "(A) 負數包含小數與分數，越接近 0 越大，故沒有最大的負數；\n(B) 負整數有 $-1, -2, -3, \\dots$，最大者為 $-1$，敘述正確；\n(C) 正數無最小者（例如 $0.0001$ 更小）；\n(D) 負數可以無限小，沒有最小負數。"
   },
   {
@@ -1062,9 +1062,9 @@
     "unit": "M01 整數的運算",
     "concept": "負數與數線",
     "difficulty": "基礎",
-    "type": "填充題",
-    "content": "下列敘述何者正確？ \\rule[-2ex]{3cm}{0.4pt}\\raisebox{-0.8ex}{\\makebox[0pt][r]{\\makebox[3cm][c]{\\textbf{(1)}}}} \\\\\n(A) 在數線上，某數與 0 的距離即為此數的絕對值 \\quad (B) 「0」不是正數也不是負數，所以「0」沒有絕對值 \\quad (C) 絕對值愈小的數，其值愈小 \\quad (D) 在數線上，離原點愈遠的數，其值愈大",
-    "answer": "(A)",
+    "type": "選擇題",
+    "content": "下列敘述何者正確？ \\\\\n(A) 在數線上，某數與 0 的距離即為此數的絕對值 \\quad (B) 「0」不是正數也不是負數，所以「0」沒有絕對值 \\quad (C) 絕對值愈小的數，其值愈小 \\quad (D) 在數線上，離原點愈遠的數，其值愈大",
+    "answer": "A",
     "solution": "(A) 絕對值的幾何意義即為數線上該數對應點與原點 (0) 的距離，敘述正確；\n(B) 0 的絕對值就是 0；\n(C) 負數的絕對值越小，其值反而越大（例如 $|-1| < |-5|$，但 $-1 > -5$）；\n(D) 原點左邊離原點越遠，其值越小。"
   },
   {
@@ -1074,9 +1074,9 @@
     "unit": "M01 整數的運算",
     "concept": "負數與數線",
     "difficulty": "中等",
-    "type": "填充題",
-    "content": "已知 $a$ 為負整數，若絕對值小於 $|a|$ 的整數共有 17 個，則 $a = $？ \\rule[-2ex]{3cm}{0.4pt}\\raisebox{-0.8ex}{\\makebox[0pt][r]{\\makebox[3cm][c]{\\textbf{(1)}}}} \\\\\n(A) $-17$ \\quad (B) $-16$ \\quad (C) $-9$ \\quad (D) $-8$",
-    "answer": "(C)",
+    "type": "選擇題",
+    "content": "已知 $a$ 為負整數，若絕對值小於 $|a|$ 的整數共有 17 個，則 $a = $？ \\\\\n(A) $-17$ \\quad (B) $-16$ \\quad (C) $-9$ \\quad (D) $-8$",
+    "answer": "C",
     "solution": "絕對值小於 $|a|$ 的整數包含 0 以及正負整數。\n扣除 0 後剩下 $17 - 1 = 16$ 個，正負整數各占半數，即有 8 個正整數 ($1, 2, \\dots, 8$)。\n因此 $|a| = 9$。因為 $a$ 為負整數，故 $a = -9$。"
   },
   {
@@ -1086,9 +1086,9 @@
     "unit": "M01 整數的運算",
     "concept": "負數與數線",
     "difficulty": "基礎",
-    "type": "填充題",
-    "content": "$23 + (-13) = 10$，此式中的敘述下列何者正確？ \\rule[-2ex]{3cm}{0.4pt}\\raisebox{-0.8ex}{\\makebox[0pt][r]{\\makebox[3cm][c]{\\textbf{(1)}}}} \\\\\n(A) $+$ 是運算符號，$-$ 是性質符號 \\quad (B) $+$ 是性質符號，$-$ 是運算符號 \\quad (C) $+$ 和 $-$ 都是運算符號 \\quad (D) $+$ 和 $-$ 都是性質符號",
-    "answer": "(A)",
+    "type": "選擇題",
+    "content": "$23 + (-13) = 10$，此式中的敘述下列何者正確？ \\\\\n(A) $+$ 是運算符號，$-$ 是性質符號 \\quad (B) $+$ 是性質符號，$-$ 是運算符號 \\quad (C) $+$ 和 $-$ 都是運算符號 \\quad (D) $+$ 和 $-$ 都是性質符號",
+    "answer": "A",
     "solution": "式中的 $+$ 表示兩數相加的運算動作，為「運算符號」；\n$(-13)$ 中的 $-$ 表示該數為負數，為「性質符號」。"
   },
   {
@@ -1098,9 +1098,9 @@
     "unit": "M01 整數的運算",
     "concept": "整數的加減",
     "difficulty": "進階",
-    "type": "填充題",
-    "content": "已知數線上的兩點 $A(-12)$、$B(18)$。若有 5 個等分點將 $\\overline{AB}$ 分成 6 等分，則這 5 個等分點所表示的數的總和為多少？ \\rule[-2ex]{3cm}{0.4pt}\\raisebox{-0.8ex}{\\makebox[0pt][r]{\\makebox[3cm][c]{\\textbf{(1)}}}} \\\\\n(A) 10 \\quad (B) 12 \\quad (C) 15 \\quad (D) 18",
-    "answer": "(C)",
+    "type": "選擇題",
+    "content": "已知數線上的兩點 $A(-12)$、$B(18)$。若有 5 個等分點將 $\\overline{AB}$ 分成 6 等分，則這 5 個等分點所表示的數的總和為多少？ \\\\\n(A) 10 \\quad (B) 12 \\quad (C) 15 \\quad (D) 18",
+    "answer": "C",
     "solution": "$\\overline{AB}$ 的中點為 $\\frac{-12 + 18}{2} = 3$。\n由於 5 個等分點對稱分布於中點兩側，此 5 個點的平均值即為中點坐標 3。\n總和為 $3 \\times 5 = 15$。"
   },
   {
@@ -1110,9 +1110,9 @@
     "unit": "M01 整數的運算",
     "concept": "整數的加減",
     "difficulty": "基礎",
-    "type": "填充題",
-    "content": "在數線上有 $A(-7)$、$B(-14)$ 兩點，則 $A$、$B$ 兩點的距離可以下列何者來表示？ \\rule[-2ex]{3cm}{0.4pt}\\raisebox{-0.8ex}{\\makebox[0pt][r]{\\makebox[3cm][c]{\\textbf{(1)}}}} \\\\\n(A) $(-7) - 14$ \\quad (B) $(-7) - (-14)$ \\quad (C) $(-7) + (-14)$ \\quad (D) $7 - 14$",
-    "answer": "(B)",
+    "type": "選擇題",
+    "content": "在數線上有 $A(-7)$、$B(-14)$ 兩點，則 $A$、$B$ 兩點的距離可以下列何者來表示？ \\\\\n(A) $(-7) - 14$ \\quad (B) $(-7) - (-14)$ \\quad (C) $(-7) + (-14)$ \\quad (D) $7 - 14$",
+    "answer": "B",
     "solution": "兩點間的距離等於大數減去小數：\n因為 $-7 > -14$，故距離為 $(-7) - (-14)$。"
   },
   {
@@ -1122,9 +1122,9 @@
     "unit": "M01 整數的運算",
     "concept": "整數的加減",
     "difficulty": "中等",
-    "type": "填充題",
-    "content": "若 $a = 5$，$b = -7$，則下列何式的結果會最小？ \\rule[-2ex]{3cm}{0.4pt}\\raisebox{-0.8ex}{\\makebox[0pt][r]{\\makebox[3cm][c]{\\textbf{(1)}}}} \\\\\n(A) $|a + b|$ \\quad (B) $|a - b|$ \\quad (C) $|a|+|b|$ \\quad (D) $|a| - |b|$",
-    "answer": "(D)",
+    "type": "選擇題",
+    "content": "若 $a = 5$，$b = -7$，則下列何式的結果會最小？ \\\\\n(A) $|a + b|$ \\quad (B) $|a - b|$ \\quad (C) $|a|+|b|$ \\quad (D) $|a| - |b|$",
+    "answer": "D",
     "solution": "分別計算各選項：\n(A) $|a + b| = |5 + (-7)| = |-2| = 2$\n(B) $|a - b| = |5 - (-7)| = |12| = 12$\n(C) $|a| + |b| = |5| + |-7| = 5 + 7 = 12$\n(D) $|a| - |b| = |5| - |-7| = 5 - 7 = -2$\n比較結果，(D) 為最小值 $-2$。"
   },
   {
@@ -1134,9 +1134,9 @@
     "unit": "M01 整數的運算",
     "concept": "整數的加減",
     "difficulty": "基礎",
-    "type": "填充題",
-    "content": "\\CJKunderline{海昌書局}於\\CJKunderline{國風}附近購得一間套房，總價為 800 萬元，已知第一年房價上漲了 150 萬元，第二年房價上漲了 80 萬元，為了抑制房價節節攀升，政府祭出壓抑房價政策，第三年房價下跌了 250 萬元。若\\CJKunderline{阿泰}於第三年售出此套房，請問他可以賺或賠多少萬元？ \\rule[-2ex]{3cm}{0.4pt}\\raisebox{-0.8ex}{\\makebox[0pt][r]{\\makebox[3cm][c]{\\textbf{(1)}}}} \\\\\n(A) 賺 20 萬元 \\quad (B) 賠 20 萬元 \\quad (C) 賺 780 萬元 \\quad (D) 賠 780 萬元",
-    "answer": "(B)",
+    "type": "選擇題",
+    "content": "\\CJKunderline{海昌書局}於\\CJKunderline{國風}附近購得一間套房，總價為 800 萬元，已知第一年房價上漲了 150 萬元，第二年房價上漲了 80 萬元，為了抑制房價節節攀升，政府祭出壓抑房價政策，第三年房價下跌了 250 萬元。若\\CJKunderline{阿泰}於第三年售出此套房，請問他可以賺或賠多少萬元？ \\\\\n(A) 賺 20 萬元 \\quad (B) 賠 20 萬元 \\quad (C) 賺 780 萬元 \\quad (D) 賠 780 萬元",
+    "answer": "B",
     "solution": "計算三年間的價格變化總和：\n$(+150) + (+80) + (-250) = 230 - 250 = -20$（萬元）。\n負號代表虧損，故賠了 20 萬元。"
   },
   {
@@ -1146,9 +1146,9 @@
     "unit": "M01 整數的運算",
     "concept": "整數的乘除與四則運算",
     "difficulty": "中等",
-    "type": "填充題",
-    "content": "下列敘述的等式何者正確？ \\rule[-2ex]{3cm}{0.4pt}\\raisebox{-0.8ex}{\\makebox[0pt][r]{\\makebox[3cm][c]{\\textbf{(1)}}}} \\\\\n(A) $(-3) \\times (-5) + (-3) \\times 6 = (-3) \\times (5 - 6)$ \\\\\n(B) $2 + 3 \\times (-2) \\div 4 = 5 \\times (-2) \\div 4$ \\\\\n(C) $5 \\times (-3) - (-8) = 5 \\times (-3 + 8)$ \\\\\n(D) $(-3 + 5) \\div 24 = (-3) \\div 24 + 5 \\div 24$",
-    "answer": "(D)",
+    "type": "選擇題",
+    "content": "下列敘述的等式何者正確？ \\\\\n(A) $(-3) \\times (-5) + (-3) \\times 6 = (-3) \\times (5 - 6)$ \\\\\n(B) $2 + 3 \\times (-2) \\div 4 = 5 \\times (-2) \\div 4$ \\\\\n(C) $5 \\times (-3) - (-8) = 5 \\times (-3 + 8)$ \\\\\n(D) $(-3 + 5) \\div 24 = (-3) \\div 24 + 5 \\div 24$",
+    "answer": "D",
     "solution": "(A) 應為 $(-3) \\times [(-5) + 6]$；\n(B) 先乘除後加減，不可先算 $2 + 3$；\n(C) 分配律不成立（$-8$ 沒有乘 5）；\n(D) 被除數之和除以除數符合分配律：$(a + b) \\div c = a \\div c + b \\div c$，正確。"
   },
   {
@@ -1158,9 +1158,9 @@
     "unit": "M01 整數的運算",
     "concept": "整數的乘除與四則運算",
     "difficulty": "基礎",
-    "type": "填充題",
-    "content": "在 $\\triangle$ 內應填入下列哪一種運算符號，可使「$39 - 3 \\triangle 12 = 3$」成立？ \\rule[-2ex]{3cm}{0.4pt}\\raisebox{-0.8ex}{\\makebox[0pt][r]{\\makebox[3cm][c]{\\textbf{(1)}}}} \\\\\n(A) $+$ \\quad (B) $-$ \\quad (C) $\\times$ \\quad (D) $\\div$",
-    "answer": "(C)",
+    "type": "選擇題",
+    "content": "在 $\\triangle$ 內應填入下列哪一種運算符號，可使「$39 - 3 \\triangle 12 = 3$」成立？ \\\\\n(A) $+$ \\quad (B) $-$ \\quad (C) $\\times$ \\quad (D) $\\div$",
+    "answer": "C",
     "solution": "由 $39 - 3 \\triangle 12 = 3 \\implies 3 \\triangle 12 = 39 - 3 = 36$。\n檢視選項，$3 \\times 12 = 36$，故 $\\triangle$ 應為 $\\times$。"
   },
   {
@@ -1170,9 +1170,9 @@
     "unit": "M01 整數的運算",
     "concept": "整數的乘除與四則運算",
     "difficulty": "基礎",
-    "type": "填充題",
-    "content": "計算 $0 \\div (-6)$ 的值為何？ \\rule[-2ex]{3cm}{0.4pt}\\raisebox{-0.8ex}{\\makebox[0pt][r]{\\makebox[3cm][c]{\\textbf{(1)}}}} \\\\\n(A) 0 \\quad (B) 6 \\quad (C) $-6$ \\quad (D) 無意義",
-    "answer": "(A)",
+    "type": "選擇題",
+    "content": "計算 $0 \\div (-6)$ 的值為何？ \\\\\n(A) 0 \\quad (B) 6 \\quad (C) $-6$ \\quad (D) 無意義",
+    "answer": "A",
     "solution": "0 除以任何不為 0 的數，結果均為 0。"
   },
   {
@@ -1182,9 +1182,9 @@
     "unit": "M01 整數的運算",
     "concept": "整數的乘除與四則運算",
     "difficulty": "中等",
-    "type": "填充題",
-    "content": "從 $-2$、$-3$、$4$、$5$ 這四個數中任取三數相乘，則最大的乘積為何？ \\rule[-2ex]{3cm}{0.4pt}\\raisebox{-0.8ex}{\\makebox[0pt][r]{\\makebox[3cm][c]{\\textbf{(1)}}}} \\\\\n(A) 120 \\quad (B) 60 \\quad (C) 30 \\quad (D) 24",
-    "answer": "(C)",
+    "type": "選擇題",
+    "content": "從 $-2$、$-3$、$4$、$5$ 這四個數中任取三數相乘，則最大的乘積為何？ \\\\\n(A) 120 \\quad (B) 60 \\quad (C) 30 \\quad (D) 24",
+    "answer": "C",
     "solution": "要使乘積最大（正數），可取兩個負數與一個最大的正數：\n$(-2) \\times (-3) \\times 5 = 6 \\times 5 = 30$。\n（若取一負兩正結果為負數：$(-3) \\times 4 \\times 5 = -60$）。"
   },
   {
@@ -1194,9 +1194,9 @@
     "unit": "M01 整數的運算",
     "concept": "整數的乘除與四則運算",
     "difficulty": "中等",
-    "type": "填充題",
-    "content": "下列各等式何者不會成立？ \\rule[-2ex]{3cm}{0.4pt}\\raisebox{-0.8ex}{\\makebox[0pt][r]{\\makebox[3cm][c]{\\textbf{(1)}}}} \\\\\n(A) $a \\div (b - c) = a \\div b - a \\div c$ \\quad (B) $a - (b - c) = a - b + c$ \\\\\n(C) $a \\times b \\times c = a \\times c \\times b$ \\quad (D) $a \\times (b - c) = a \\times b - a \\times c$",
-    "answer": "(A)",
+    "type": "選擇題",
+    "content": "下列各等式何者不會成立？ \\\\\n(A) $a \\div (b - c) = a \\div b - a \\div c$ \\quad (B) $a - (b - c) = a - b + c$ \\\\\n(C) $a \\times b \\times c = a \\times c \\times b$ \\quad (D) $a \\times (b - c) = a \\times b - a \\times c$",
+    "answer": "A",
     "solution": "(A) 除法對於括號在後方的減法不具右分配律，例如 $12 \\div (4 - 2) = 6 \\neq 12 \\div 4 - 12 \\div 2 = 3 - 6 = -3$，故不成立。"
   },
   {
@@ -1206,9 +1206,9 @@
     "unit": "M01 整數的運算",
     "concept": "乘方與科學記號",
     "difficulty": "中等",
-    "type": "填充題",
-    "content": "下列哪一個選項，其值為正數？ \\rule[-2ex]{3cm}{0.4pt}\\raisebox{-0.8ex}{\\makebox[0pt][r]{\\makebox[3cm][c]{\\textbf{(1)}}}} \\\\\n(A) $(-4)^{75}$ \\quad (B) $-4^{76}$ \\quad (C) $-(-4)^{77}$ \\quad (D) $-(-4)^{78}$",
-    "answer": "(C)",
+    "type": "選擇題",
+    "content": "下列哪一個選項，其值為正數？ \\\\\n(A) $(-4)^{75}$ \\quad (B) $-4^{76}$ \\quad (C) $-(-4)^{77}$ \\quad (D) $-(-4)^{78}$",
+    "answer": "C",
     "solution": "(A) 負數的奇數次方為負數；\n(B) $-(4^{76})$ 為負數；\n(C) $-(-4)^{77} = -(-(4^{77})) = +4^{77} > 0$（正數）；\n(D) $-(-4)^{78} = -(+4^{78}) < 0$。"
   },
   {
@@ -1218,9 +1218,9 @@
     "unit": "M01 整數的運算",
     "concept": "乘方與科學記號",
     "difficulty": "基礎",
-    "type": "填充題",
-    "content": "下列式子何者正確？ \\rule[-2ex]{3cm}{0.4pt}\\raisebox{-0.8ex}{\\makebox[0pt][r]{\\makebox[3cm][c]{\\textbf{(1)}}}} \\\\\n(A) $10^{-4} = -0.4$ \\quad (B) $10^{-5} = 0.05$ \\quad (C) $10^{-6} < 0$ \\quad (D) $10^{-7} = \\frac{1}{10^7}$",
-    "answer": "(D)",
+    "type": "選擇題",
+    "content": "下列式子何者正確？ \\\\\n(A) $10^{-4} = -0.4$ \\quad (B) $10^{-5} = 0.05$ \\quad (C) $10^{-6} < 0$ \\quad (D) $10^{-7} = \\frac{1}{10^7}$",
+    "answer": "D",
     "solution": "根據負指數定義：$a^{-n} = \\frac{1}{a^n}$。\n故 $10^{-7} = \\frac{1}{10^7}$，(D) 正確。"
   },
   {
@@ -1230,9 +1230,9 @@
     "unit": "M01 整數的運算",
     "concept": "乘方與科學記號",
     "difficulty": "基礎",
-    "type": "填充題",
-    "content": "已知 $a = 9.3 \\times 10^{-9}$，$b = 7.8 \\times 10^{-5}$，$c = 5.2 \\times 10^{-7}$，則 $a$、$b$、$c$ 的大小關係為何？ \\rule[-2ex]{3cm}{0.4pt}\\raisebox{-0.8ex}{\\makebox[0pt][r]{\\makebox[3cm][c]{\\textbf{(1)}}}} \\\\\n(A) $a > b > c$ \\quad (B) $c > b > a$ \\quad (C) $b > a > c$ \\quad (D) $b > c > a$",
-    "answer": "(D)",
+    "type": "選擇題",
+    "content": "已知 $a = 9.3 \\times 10^{-9}$，$b = 7.8 \\times 10^{-5}$，$c = 5.2 \\times 10^{-7}$，則 $a$、$b$、$c$ 的大小關係為何？ \\\\\n(A) $a > b > c$ \\quad (B) $c > b > a$ \\quad (C) $b > a > c$ \\quad (D) $b > c > a$",
+    "answer": "D",
     "solution": "比較科學記號的大小，先看 $10$ 的次方：\n$-5 > -7 > -9$，故 $10^{-5} > 10^{-7} > 10^{-9}$。\n得出 $b > c > a$。"
   },
   {
@@ -1242,9 +1242,9 @@
     "unit": "M01 整數的運算",
     "concept": "乘方與科學記號",
     "difficulty": "基礎",
-    "type": "填充題",
-    "content": "將 $3.14 \\times 10^7$ 展開後的數字，共有幾個零？ \\rule[-2ex]{3cm}{0.4pt}\\raisebox{-0.8ex}{\\makebox[0pt][r]{\\makebox[3cm][c]{\\textbf{(1)}}}} \\\\\n(A) 4 \\quad (B) 5 \\quad (C) 6 \\quad (D) 7",
-    "answer": "(B)",
+    "type": "選擇題",
+    "content": "將 $3.14 \\times 10^7$ 展開後的數字，共有幾個零？ \\\\\n(A) 4 \\quad (B) 5 \\quad (C) 6 \\quad (D) 7",
+    "answer": "B",
     "solution": "$3.14 \\times 10^7 = 314 \\times 10^5 = 31400000$。\n展開後的數字後方共有 5 個零。"
   },
   {
@@ -1254,9 +1254,9 @@
     "unit": "M01 整數的運算",
     "concept": "乘方與科學記號",
     "difficulty": "基礎",
-    "type": "填充題",
-    "content": "下列甲、乙、丙、丁四個人有關於 $3 \\times 10^{-3}$ 的說法，哪一個是正確的？ \\rule[-2ex]{3cm}{0.4pt}\\raisebox{-0.8ex}{\\makebox[0pt][r]{\\makebox[3cm][c]{\\textbf{(1)}}}} \\\\\n(A) 甲說：$3 \\times 10^{-3}$ 小於 0.01 \\quad (B) 乙說：$3 \\times 10^{-3}$ 一定大於 1 \\\\\n(C) 丙說：$3 \\times 10^{-3}$ 是一個負數 \\quad (D) 丁說：$3 \\times 10^{-3}$ 剛好等於 10",
-    "answer": "(A)",
+    "type": "選擇題",
+    "content": "下列甲、乙、丙、丁四個人有關於 $3 \\times 10^{-3}$ 的說法，哪一個是正確的？ \\\\\n(A) 甲說：$3 \\times 10^{-3}$ 小於 0.01 \\quad (B) 乙說：$3 \\times 10^{-3}$ 一定大於 1 \\\\\n(C) 丙說：$3 \\times 10^{-3}$ 是一個負數 \\quad (D) 丁說：$3 \\times 10^{-3}$ 剛好等於 10",
+    "answer": "A",
     "solution": "$3 \\times 10^{-3} = 0.003$。\n$0.003 < 0.01$，故甲的說法正確。"
   },
   {
