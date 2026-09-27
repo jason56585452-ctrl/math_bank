@@ -1,0 +1,6 @@
+texlive-xetex
+texlive-lang-chinese
+texlive-pictures
+texlive-latex-extra
+fonts-arphic-ukai
+fonts-noto-cjk
