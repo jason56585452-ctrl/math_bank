@@ -117,25 +117,33 @@ def render_pdf_preview(pdf_bytes, height=750):
     """
     components.html(html_code, height=height, scrolling=True)
 
-# 輔助函式：美化網頁預覽（支援 \quad, \CJKsout 與 LaTeX 換行 \\）
+# 輔助函式：美化網頁預覽（自動保護 $...$ 內的 \quad 不被破壞）
 def clean_for_web(text):
+    # 1. 先修復錢字號內側前後多餘空白
     text = re.sub(r'\$\s+([^$]+?)\$', r'$\1$', text)
     text = re.sub(r'\$([^$]+?)\s+\$', r'$\1$', text)
-    text = re.sub(r'\\CJKunderline\{(.*?)\}', r'<u>\1</u>', text)
-    text = re.sub(r'\\CJKsout\{(.*?)\}', r'<del>\1</del>', text)
-    text = re.sub(r'\\sout\{(.*?)\}', r'<del>\1</del>', text)
-    text = re.sub(
-        r'\\rule\[.*?\]\{.*?\}\{.*?\}\\raisebox\{.*?\}\{\\makebox\[.*?\]\[.*?\]\{\\makebox\[.*?\]\[.*?\]\{\\textbf\{(\(\d+\))\}\}\}\}',
-        r' <u>&nbsp;&nbsp;&nbsp;&nbsp;<b>\1</b>&nbsp;&nbsp;&nbsp;&nbsp;</u> ',
-        text
-    )
-    text = re.sub(r'\\rule\[.*?\]\{.*?\}\{.*?\}', r' <u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u> ', text)
-    text = text.replace('\\qquad', '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;')
-    text = text.replace('\\quad', '&nbsp;&nbsp;&nbsp;&nbsp;')
-    text = text.replace('\\[0.5em]', '<br>')
-    text = re.sub(r'\\\\\s*(?!\\hline)', '<br>', text)
-    return text
-
+    
+    # 2. 以 $...$ 切分字串：奇數索引為數學公式內部，偶數索引為一般文字
+    parts = re.split(r'(\$[^$]+\$)', text)
+    for i in range(0, len(parts), 2):  # 只針對 $...$ 外部的一般文字進行 HTML 轉換
+        seg = parts[i]
+        seg = re.sub(r'\\CJKunderline\{(.*?)\}', r'<u>\1</u>', seg)
+        seg = re.sub(r'\\CJKsout\{(.*?)\}', r'<del>\1</del>', seg)
+        seg = re.sub(r'\\sout\{(.*?)\}', r'<del>\1</del>', seg)
+        seg = re.sub(
+            r'\\rule\[.*?\]\{.*?\}\{.*?\}\\raisebox\{.*?\}\{\\makebox\[.*?\]\[.*?\]\{\\makebox\[.*?\]\[.*?\]\{\\textbf\{(\(\d+\))\}\}\}\}',
+            r' <u>&nbsp;&nbsp;&nbsp;&nbsp;<b>\1</b>&nbsp;&nbsp;&nbsp;&nbsp;</u> ',
+            seg
+        )
+        seg = re.sub(r'\\rule\[.*?\]\{.*?\}\{.*?\}', r' <u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u> ', seg)
+        seg = seg.replace('\\qquad', '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;')
+        seg = seg.replace('\\quad', '&nbsp;&nbsp;&nbsp;&nbsp;')
+        seg = seg.replace('\\[0.5em]', '<br>')
+        seg = re.sub(r'\\\\\s*(?!\\hline)', '<br>', seg)
+        parts[i] = seg
+        
+    return "".join(parts)
+    
 # 輔助函式：將來源標籤插入在題幹文字最後面（靠右對齊 + 深灰色）
 def append_source_right(content, source_str, show_source):
     if not show_source or not source_str:
