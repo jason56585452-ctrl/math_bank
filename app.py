@@ -6,6 +6,7 @@ import subprocess
 import tempfile
 import os
 import platform
+import base64
 
 st.set_page_config(page_title="數學智慧組卷系統", layout="wide")
 st.title("📚 數學智慧組卷系統")
@@ -30,7 +31,7 @@ m_units = [
     "M20 相似形", "M21 圓形", "M22 幾何與證明", "M23 二次函數", "M24 統計與機率", "M25 生活中的立體圖形"
 ]
 
-# 輔助函式：美化網頁預覽（新增支援 \quad, \CJKsout 與 LaTeX 換行 \\）
+# 輔助函式：美化網頁預覽（支援 \quad, \CJKsout 與 LaTeX 換行 \\）
 def clean_for_web(text):
     text = re.sub(r'\$\s+([^$]+?)\$', r'$\1$', text)
     text = re.sub(r'\$([^$]+?)\s+\$', r'$\1$', text)
@@ -43,10 +44,8 @@ def clean_for_web(text):
         text
     )
     text = re.sub(r'\\rule\[.*?\]\{.*?\}\{.*?\}', r' <u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u> ', text)
-    # 轉換 \quad 與 \qquad 為網頁空白
     text = text.replace('\\qquad', '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;')
     text = text.replace('\\quad', '&nbsp;&nbsp;&nbsp;&nbsp;')
-    # 轉換 LaTeX 換行（避免誤傷表格內的 \\ \hline）
     text = text.replace('\\[0.5em]', '<br>')
     text = re.sub(r'\\\\\s*(?!\\hline)', '<br>', text)
     return text
@@ -95,8 +94,8 @@ def build_answer_grid(q_list, start_num, cols_per_row=4, cell_height=0.8, is_tea
     latex += "\\end{tabularx}\n"
     return latex
 
-# 輔助函式：組裝完整 LaTeX 考卷程式碼（支援選擇題、填充題、非選題自動編號）
-def generate_latex(exam_questions, title, range_text, doc_class, calc_space=2.5, choice_cols=10, choice_height=0.4, ans_cols=4, ans_height=0.8, non_choice_height=3.8, show_source=True, is_teacher=True):
+# 輔助函式：組裝完整 LaTeX 考卷程式碼（支援答案卷自動單頁滿版 Auto-Fit）
+def generate_latex(exam_questions, title, range_text, doc_class, calc_space=2.5, choice_cols=10, choice_height=0.4, ans_cols=4, ans_height=0.8, non_choice_height=3.8, auto_fit_ans=True, show_source=True, is_teacher=True):
     version_tag = "（教用詳解版）" if is_teacher else "（學生試題卷）"
     ans_sheet_tag = "答案卷（教用版）" if is_teacher else "答案卷"
     
@@ -114,11 +113,18 @@ def generate_latex(exam_questions, title, range_text, doc_class, calc_space=2.5,
 \\usepackage{{tabularx}}
 \\usepackage[table]{{xcolor}}
 \\usepackage{{tikz}}
+\\usepackage{{graphicx}}
 \\usepackage[margin=1.8cm]{{geometry}}
 \\usepackage{{xeCJKfntef}}
 \\usepackage{{enumitem}}
 
 \\definecolor{{darkgray}}{{RGB}}{{90, 90, 90}}
+
+\\newsavebox{{\\topgridsbox}}
+\\newsavebox{{\\ncstemsbox}}
+\\newsavebox{{\\ansfullpagebox}}
+\\newlength{{\\availheight}}
+\\newlength{{\\autoncheight}}
 
 \\linespread{{1.5}}
 \\everymath{{\\displaystyle}}
@@ -205,7 +211,7 @@ def generate_latex(exam_questions, title, range_text, doc_class, calc_space=2.5,
         body += "\\end{enumerate}\n"
 
     # ==========================================
-    # 答案卷組裝
+    # 答案卷組裝（支援自動單頁滿版引擎）
     # ==========================================
     ans_sheet = f"""
 \\newpage
@@ -214,54 +220,96 @@ def generate_latex(exam_questions, title, range_text, doc_class, calc_space=2.5,
 \\section*{{{title} {ans_sheet_tag}}}
 
 \\noindent 班級：\\rule[-2ex]{{2cm}}{{0.4pt}} \\quad 座號：\\rule[-2ex]{{2cm}}{{0.4pt}} \\quad 姓名：\\rule[-2ex]{{2.5cm}}{{0.4pt}} \\hfill 得分：\\rule[-2ex]{{2cm}}{{0.4pt}}
+\\par\\vspace{{0.2em}}
 
 \\newcolumntype{{Y}}{{>{{\\centering\\arraybackslash}}X}}
 """
+    # 先組裝「選擇題 + 填充題」區塊
+    top_grids_tex = ""
     ans_sec_idx = 0
     if choice_qs:
         sec_title = cn_nums[ans_sec_idx]
         ans_sec_idx += 1
-        ans_sheet += f"\n\\vspace{{0.3em}}\n\\noindent \\textbf{{{sec_title}、選擇題：}}\n\\vspace{{0.2em}}\n\n"
-        # 選擇題在答案卷中若答案有括號 (D)，自動去除括號呈現 D 更美觀
+        top_grids_tex += f"\\vspace{{0.2em}}\n\\noindent \\textbf{{{sec_title}、選擇題：}}\n\\vspace{{0.15em}}\n\n"
         choice_qs_for_grid = []
         for q in choice_qs:
             q_copy = dict(q)
             q_copy['answer'] = q.get('answer', '').replace('(', '').replace(')', '')
             choice_qs_for_grid.append(q_copy)
-        ans_sheet += build_answer_grid(choice_qs_for_grid, 1, cols_per_row=choice_cols, cell_height=choice_height, is_teacher=is_teacher, label_fmt="{n}.")
+        top_grids_tex += build_answer_grid(choice_qs_for_grid, 1, cols_per_row=choice_cols, cell_height=choice_height, is_teacher=is_teacher, label_fmt="{n}.")
 
     grid_counter = 1
     if fill_qs:
         sec_title = cn_nums[ans_sec_idx]
         ans_sec_idx += 1
-        ans_sheet += f"\n\\vspace{{0.5em}}\n\\noindent \\textbf{{{sec_title}、填充題：}}\n\\vspace{{0.2em}}\n\n"
-        ans_sheet += build_answer_grid(fill_qs, grid_counter, cols_per_row=ans_cols, cell_height=ans_height, is_teacher=is_teacher, label_fmt="({n})")
+        top_grids_tex += f"\n\\vspace{{0.4em}}\n\\noindent \\textbf{{{sec_title}、填充題：}}\n\\vspace{{0.15em}}\n\n"
+        top_grids_tex += build_answer_grid(fill_qs, grid_counter, cols_per_row=ans_cols, cell_height=ans_height, is_teacher=is_teacher, label_fmt="({n})")
         grid_counter += len(fill_qs)
 
-    if non_choice_qs:
-        sec_title = cn_nums[ans_sec_idx]
-        ans_sec_idx += 1
-        ans_sheet += f"\n\\vspace{{0.5em}}\n\\noindent \\textbf{{{sec_title}、非選應用題：（須寫出計算過程）}}\n\\vspace{{0.2em}}\n\n"
-        
+    # 輔助內部函式：組裝非選題區塊
+    def build_nc_section(sec_title_str, height_expr):
+        nc_tex = f"\n\\vspace{{0.4em}}\n\\noindent \\textbf{{{sec_title_str}、非選應用題：（須寫出計算過程）}}\n\\vspace{{0.15em}}\n\n"
         nc_counter = 1
         for q in non_choice_qs:
             q_nc_with_tag = append_source_right(q['content'], q.get('source', ''), show_source)
-            ans_sheet += "\\noindent\\begin{minipage}{\\textwidth}\n"
-            ans_sheet += "{\\renewcommand\\arraystretch{1.25}\n\\begin{tabularx}{\\textwidth}{|X|}\n\\hline\n"
-            ans_sheet += f"\\textbf{{{nc_counter}.}} {q_nc_with_tag} \\\\ \\hline\n"
+            nc_tex += "\\noindent\\begin{minipage}{\\textwidth}\n"
+            nc_tex += "{\\renewcommand\\arraystretch{1.25}\n\\begin{tabularx}{\\textwidth}{|X|}\n\\hline\n"
+            nc_tex += f"\\textbf{{{nc_counter}.}} {q_nc_with_tag} \\\\ \\hline\n"
             if is_teacher:
                 sol_nc = q.get('solution', '').replace('\n', '\\newline\n')
                 ans_nc = q.get('answer', '')
-                ans_sheet += f"""\\textbf{{【觀念】}} {q.get('unit', '')} > {q['concept']} （難度：{q['difficulty']}） \\\\
+                nc_tex += f"""\\textbf{{【觀念】}} {q.get('unit', '')} > {q['concept']} （難度：{q['difficulty']}） \\\\
 \\textbf{{【解析】}} \\newline
 {{\\color{{blue}}
 {sol_nc}
 }} \\newline
 \\textbf{{【答案】}} {{\\color{{red}}{ans_nc}}} \\\\ \\hline\n"""
             else:
-                ans_sheet += f"\\rule{{0pt}}{{{non_choice_height}cm}} \\\\ \\hline\n"
-            ans_sheet += "\\end{tabularx}}\n\\vspace{0.3cm}\n\\end{minipage}\n\n"
+                nc_tex += f"\\rule{{0pt}}{{{height_expr}}} \\\\ \\hline\n"
+            nc_tex += "\\end{tabularx}}\n\\vspace{0.25cm}\n\\end{minipage}\n\n"
             nc_counter += 1
+        return nc_tex
+
+    # 判斷是否啟用「學生答案卷自動單頁滿版」
+    if auto_fit_ans and (not is_teacher):
+        ans_sheet += f"\\begin{{lrbox}}{{\\topgridsbox}}\n\\begin{{minipage}}{{\\textwidth}}\n{top_grids_tex}\n\\end{{minipage}}\n\\end{{lrbox}}\n"
+        if non_choice_qs:
+            sec_title = cn_nums[ans_sec_idx]
+            dummy_nc_tex = build_nc_section(sec_title, "0pt")
+            real_nc_tex = build_nc_section(sec_title, "\\autoncheight")
+            num_nc = len(non_choice_qs)
+            ans_sheet += f"""\\begin{{lrbox}}{{\\ncstemsbox}}
+\\begin{{minipage}}{{\\textwidth}}
+{dummy_nc_tex}
+\\end{{minipage}}
+\\end{{lrbox}}
+\\setlength{{\\availheight}}{{\\dimexpr \\textheight - 2.5cm - \\ht\\topgridsbox - \\dp\\topgridsbox - \\ht\\ncstemsbox - \\dp\\ncstemsbox \\relax}}
+\\setlength{{\\autoncheight}}{{\\dimexpr \\availheight / {num_nc} \\relax}}
+\\ifdim\\autoncheight<1.8cm \\setlength{{\\autoncheight}}{{1.8cm}}\\fi
+\\ifdim\\autoncheight>9.0cm \\setlength{{\\autoncheight}}{{9.0cm}}\\fi
+"""
+            full_ans_body = "\\noindent\\usebox{\\topgridsbox}\\par\n" + real_nc_tex
+        else:
+            full_ans_body = "\\noindent\\usebox{\\topgridsbox}\\par\n"
+
+        # 外層防爆頁保護：若總高度超過單頁可用高度，自動微幅等比例縮小至單頁
+        ans_sheet += f"""\\begin{{lrbox}}{{\\ansfullpagebox}}
+\\begin{{minipage}}{{\\textwidth}}
+{full_ans_body}
+\\end{{minipage}}
+\\end{{lrbox}}
+\\ifdim\\dimexpr\\ht\\ansfullpagebox+\\dp\\ansfullpagebox\\relax > \\dimexpr\\textheight-2.3cm\\relax
+    \\noindent\\resizebox*{{!}}{{\\dimexpr\\textheight-2.3cm\\relax}}{{\\usebox{{\\ansfullpagebox}}}}
+\\else
+    \\noindent\\usebox{{\\ansfullpagebox}}
+\\fi
+"""
+    else:
+        # 手動模式或教用詳解卷
+        ans_sheet += top_grids_tex
+        if non_choice_qs:
+            sec_title = cn_nums[ans_sec_idx]
+            ans_sheet += build_nc_section(sec_title, f"{non_choice_height}cm")
 
     ans_sheet += "\n\\restoregeometry\n\\end{document}\n"
     return preamble + body + ans_sheet
@@ -319,12 +367,21 @@ with tab1:
     show_source_tag = st.sidebar.checkbox("在每題尾端靠右印出處 (深灰色【113國風】)", value=True)
     
     st.sidebar.subheader("📐 空間與答案卷格子微調")
+    auto_fit_toggle = st.sidebar.checkbox(
+        "✨ 答案卷自動單頁滿版 (Auto-Fit)",
+        value=True,
+        help="自動計算剩餘垂直空間並均分給非選題作答框，且強制鎖定學生答案卷為 1 頁不溢頁！"
+    )
     calc_space_slider = st.sidebar.slider("學生卷每題下方計算留白 (cm)", min_value=0.2, max_value=6.0, value=2.0, step=0.2)
     choice_cols_slider = st.sidebar.slider("答案卷【選擇題每列幾格】", min_value=5, max_value=10, value=10, step=1)
     choice_height_slider = st.sidebar.slider("答案卷【選擇格高度】(cm)", min_value=0.3, max_value=1.2, value=0.4, step=0.1)
     ans_cols_slider = st.sidebar.slider("答案卷【填充題每列幾格】", min_value=2, max_value=8, value=4, step=1)
     ans_height_slider = st.sidebar.slider("答案卷【填充格高度】(cm)", min_value=0.4, max_value=1.8, value=0.8, step=0.1)
-    nc_height_slider = st.sidebar.slider("答案卷【非選題框高度】(cm)", min_value=2.5, max_value=8.0, value=3.8, step=0.2)
+    nc_height_slider = st.sidebar.slider(
+        "答案卷【非選題框高度】(cm)",
+        min_value=2.5, max_value=8.0, value=3.8, step=0.2,
+        disabled=auto_fit_toggle
+    )
     
     doc_class = st.sidebar.selectbox(
         "LaTeX 模版設定",
@@ -450,7 +507,7 @@ with tab1:
         selected_exam = st.session_state.get('random_exam', [])
 
     # ==========================================
-    # 匯出區塊：支援一鍵生成 PDF 與下載 .tex
+    # 匯出區塊：支援一鍵生成 PDF、線上預覽與下載 .tex
     # ==========================================
     if selected_exam:
         st.divider()
@@ -461,14 +518,16 @@ with tab1:
             calc_space=calc_space_slider,
             choice_cols=choice_cols_slider, choice_height=choice_height_slider,
             ans_cols=ans_cols_slider, ans_height=ans_height_slider,
-            non_choice_height=nc_height_slider, show_source=show_source_tag, is_teacher=True
+            non_choice_height=nc_height_slider, auto_fit_ans=auto_fit_toggle,
+            show_source=show_source_tag, is_teacher=True
         )
         student_tex = generate_latex(
             selected_exam, exam_title, exam_range, doc_class,
             calc_space=calc_space_slider,
             choice_cols=choice_cols_slider, choice_height=choice_height_slider,
             ans_cols=ans_cols_slider, ans_height=ans_height_slider,
-            non_choice_height=nc_height_slider, show_source=show_source_tag, is_teacher=False
+            non_choice_height=nc_height_slider, auto_fit_ans=auto_fit_toggle,
+            show_source=show_source_tag, is_teacher=False
         )
 
         if st.button("⚡ 點此直接編譯生成 PDF 考卷（學生卷 + 教用卷）", type="primary", use_container_width=True):
@@ -478,7 +537,7 @@ with tab1:
                 if ok_s and ok_t:
                     st.session_state['pdf_student'] = pdf_s
                     st.session_state['pdf_teacher'] = pdf_t
-                    st.success("🎉 PDF 編譯成功！請點擊下方按鈕下載：")
+                    st.success("🎉 PDF 編譯成功！可直接於下方線上預覽或點擊下載：")
                 else:
                     st.error("⚠️ PDF 編譯失敗，請檢查下方錯誤訊息（若在雲端請確認已建立 packages.txt）：")
                     with st.expander("查看 LaTeX 編譯紀錄 (Log)"):
@@ -502,6 +561,22 @@ with tab1:
                     mime="application/pdf",
                     use_container_width=True
                 )
+
+            # 網頁內直接預覽 PDF（免下載即可確認版面）
+            with st.expander("🖥️ 線上直接預覽 PDF 版面（免下載確認）", expanded=True):
+                prev_tab1, prev_tab2 = st.tabs(["📕 學生空白卷預覽", "📘 教師詳解卷預覽"])
+                with prev_tab1:
+                    b64_s = base64.b64encode(st.session_state['pdf_student']).decode('utf-8')
+                    st.markdown(
+                        f'<iframe src="data:application/pdf;base64,{b64_s}" width="100%" height="750px" type="application/pdf"></iframe>',
+                        unsafe_allow_html=True
+                    )
+                with prev_tab2:
+                    b64_t = base64.b64encode(st.session_state['pdf_teacher']).decode('utf-8')
+                    st.markdown(
+                        f'<iframe src="data:application/pdf;base64,{b64_t}" width="100%" height="750px" type="application/pdf"></iframe>',
+                        unsafe_allow_html=True
+                    )
 
         st.write("或者下載 `.tex` 原始檔至 VS Code 微調：")
         dl_col1, dl_col2 = st.columns(2)
