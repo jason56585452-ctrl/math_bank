@@ -1,4 +1,5 @@
 import streamlit as st
+import streamlit.components.v1 as components
 import json
 import random
 import re
@@ -30,6 +31,91 @@ m_units = [
     "M16 數列與級數", "M17 函數", "M18 三角形的基本性質", "M19 平行與四邊形",
     "M20 相似形", "M21 圓形", "M22 幾何與證明", "M23 二次函數", "M24 統計與機率", "M25 生活中的立體圖形"
 ]
+
+# 輔助函式：使用 PDF.js 將 PDF 渲染為高解析度畫布（突破 Chrome/Safari iframe 空白限制）
+def render_pdf_preview(pdf_bytes, height=750):
+    b64_pdf = base64.b64encode(pdf_bytes).decode('utf-8')
+    html_code = f"""
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+        <style>
+            body {{
+                margin: 0;
+                padding: 16px;
+                background-color: #525659;
+                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }}
+            .page-badge {{
+                color: #ffffff;
+                background: rgba(0, 0, 0, 0.65);
+                padding: 4px 14px;
+                border-radius: 14px;
+                font-size: 13px;
+                font-weight: 600;
+                margin: 8px 0 6px 0;
+                letter-spacing: 0.5px;
+            }}
+            canvas {{
+                background-color: white;
+                box-shadow: 0 4px 14px rgba(0,0,0,0.45);
+                margin-bottom: 18px;
+                max-width: 100%;
+                height: auto !important;
+                border-radius: 2px;
+            }}
+            #loading {{
+                color: #ffffff;
+                font-size: 15px;
+                margin-top: 30px;
+            }}
+        </style>
+    </head>
+    <body>
+        <div id="loading">⏳ 正在繪製 PDF 預覽頁面...</div>
+        <div id="pdf-container" style="display:flex; flex-direction:column; align-items:center; width:100%;"></div>
+        <script>
+            const pdfData = atob("{b64_pdf}");
+            const uint8Array = new Uint8Array(pdfData.length);
+            for (let i = 0; i < pdfData.length; i++) {{
+                uint8Array[i] = pdfData.charCodeAt(i);
+            }}
+
+            const pdfjsLib = window['pdfjs-dist/build/pdf'];
+            pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+
+            pdfjsLib.getDocument({{data: uint8Array}}).promise.then(async function(pdf) {{
+                document.getElementById('loading').style.display = 'none';
+                const container = document.getElementById('pdf-container');
+                for (let pageNum = 1; pageNum <= pdf.numPages; pageNum++) {{
+                    const page = await pdf.getPage(pageNum);
+                    const viewport = page.getViewport({{scale: 1.6}});
+
+                    const badge = document.createElement('div');
+                    badge.className = 'page-badge';
+                    badge.innerText = `📄 第 ${{pageNum}} 頁 / 共 ${{pdf.numPages}} 頁`;
+                    container.appendChild(badge);
+
+                    const canvas = document.createElement('canvas');
+                    const context = canvas.getContext('2d');
+                    canvas.height = viewport.height;
+                    canvas.width = viewport.width;
+                    container.appendChild(canvas);
+
+                    await page.render({{canvasContext: context, viewport: viewport}}).promise;
+                }}
+            }}).catch(function(err) {{
+                document.getElementById('loading').innerText = '⚠️ 預覽載入失敗：' + err.message;
+            }});
+        </script>
+    </body>
+    </html>
+    """
+    components.html(html_code, height=height, scrolling=True)
 
 # 輔助函式：美化網頁預覽（支援 \quad, \CJKsout 與 LaTeX 換行 \\）
 def clean_for_web(text):
@@ -562,21 +648,13 @@ with tab1:
                     use_container_width=True
                 )
 
-            # 網頁內直接預覽 PDF（免下載即可確認版面）
+            # 使用 PDF.js 畫布渲染引擎線上直接預覽（解決瀏覽器封鎖 iframe base64 PDF 問題）
             with st.expander("🖥️ 線上直接預覽 PDF 版面（免下載確認）", expanded=True):
                 prev_tab1, prev_tab2 = st.tabs(["📕 學生空白卷預覽", "📘 教師詳解卷預覽"])
                 with prev_tab1:
-                    b64_s = base64.b64encode(st.session_state['pdf_student']).decode('utf-8')
-                    st.markdown(
-                        f'<iframe src="data:application/pdf;base64,{b64_s}" width="100%" height="750px" type="application/pdf"></iframe>',
-                        unsafe_allow_html=True
-                    )
+                    render_pdf_preview(st.session_state['pdf_student'], height=780)
                 with prev_tab2:
-                    b64_t = base64.b64encode(st.session_state['pdf_teacher']).decode('utf-8')
-                    st.markdown(
-                        f'<iframe src="data:application/pdf;base64,{b64_t}" width="100%" height="750px" type="application/pdf"></iframe>',
-                        unsafe_allow_html=True
-                    )
+                    render_pdf_preview(st.session_state['pdf_teacher'], height=780)
 
         st.write("或者下載 `.tex` 原始檔至 VS Code 微調：")
         dl_col1, dl_col2 = st.columns(2)
